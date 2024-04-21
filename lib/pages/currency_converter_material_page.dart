@@ -4,19 +4,20 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
   const CurrencyConverterMaterialPage({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
         backgroundColor: Colors.blueGrey,
         body: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+           const Text(
               '0',
               style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
             ),
-           Padding(
+           Container(
              padding: const EdgeInsets.all(5),
-             child:TextField(
+             margin: const EdgeInsets.all(5),
+             child:const TextField(
               style: TextStyle(
                 color: Colors.black54,
                 fontSize: 30,
@@ -43,7 +44,20 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                 enabledBorder: UnderlineInputBorder()
               ),
               keyboardType: TextInputType.numberWithOptions(decimal: true,signed: true),
-            ),)
+            ),),
+            Padding(
+              padding: const EdgeInsets.all(5),
+               child:ElevatedButton(
+                style: const ButtonStyle(
+                   elevation: MaterialStatePropertyAll(10),
+                    backgroundColor: MaterialStatePropertyAll(Colors.blue),
+                    foregroundColor: MaterialStatePropertyAll(Colors.white),
+                    minimumSize:  MaterialStatePropertyAll(Size(double.infinity,50)),
+                ),
+                onPressed: (){},
+                child: const Text("Convert")
+            ),
+            ),
           ],
         )));
   }
