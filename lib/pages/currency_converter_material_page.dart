@@ -33,7 +33,7 @@ class _CurrencyConverterMaterialPageState extends State<CurrencyConverterMateria
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                Text(
-                  'INR ${result.toStringAsFixed(2)}',
+                  'INR ${result!=0?result.toStringAsFixed(2):result.toStringAsFixed(0)}',
                   style: const TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
@@ -74,7 +74,7 @@ class _CurrencyConverterMaterialPageState extends State<CurrencyConverterMateria
                   padding: const EdgeInsets.all(10),
                   child: ElevatedButton(
                       onPressed: () {
-                        result=double.parse(textEditingController.text)*80;
+                        result=double.parse(textEditingController.text)*81;
                         setState(() {
                         });
                       },
